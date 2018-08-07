@@ -9,13 +9,18 @@
 import KIF
 
 class LoginTests : KIFTestCase{
+    
+    //每個test跑之前
+    override func beforeEach() {
+        clearOutUsernameAndPasswordFields()
+    }
+
     /*情境:
      使用者名稱以及密碼為空白
      給定已經清空的使用者名稱以及密碼欄位
      當我點擊“登入”按鈕
      預期會看到提示訊息 “使用者欄位不得為空白”*/
     func testEmptyUsernameAndPassword() {
-        clearOutUsernameAndPasswordFields()
         tapButton(buttonName: "Login")
         expectToSeeAlert(text:"Username cannot be empty")
         tapButton(buttonName: "OK")
@@ -30,7 +35,6 @@ class LoginTests : KIFTestCase{
      */
     
     func testEmptyPassword() {
-        clearOutUsernameAndPasswordFields()
         fillInUsername()
         tapButton(buttonName: "Login")
         expectToSeeAlert(text:"Password cannot be empty")
