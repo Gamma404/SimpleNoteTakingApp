@@ -25,4 +25,8 @@ extension LoginTests {
     func fillInUsername() {
         tester().enterText("appcoda", intoViewWithAccessibilityLabel: "Login - Username")
     }
+
+    func fillInWrongPassword() {
+        tester().enterText("wrongPassword", intoViewWithAccessibilityLabel: "Login - Password")
+    }
 }

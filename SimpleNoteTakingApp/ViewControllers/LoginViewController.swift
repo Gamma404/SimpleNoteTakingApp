@@ -34,7 +34,10 @@ class LoginViewController: UIViewController {
             showErrorAlertWithMessage("Password cannot be empty")
             return
         }
-        
+        guard username == correctUsername && password == correctPassword else {
+            showErrorAlertWithMessage("Username or password is incorrect")
+            return
+        }
     }
     
     
