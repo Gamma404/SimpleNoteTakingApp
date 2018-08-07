@@ -8,7 +8,7 @@
 
 import KIF
 
-class LoginTests : KIFTestCase{
+class LoginTests : BaseUITests{
 
     //每個test跑之前
     override func beforeEach() {
