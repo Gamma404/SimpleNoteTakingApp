@@ -9,15 +9,16 @@
 /* Begin PBXBuildFile section */
 		06F08CCB8AAE5490AF134C34 /* Pods_SimpleNoteTakingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C11554102AD7951C5A5F6DB /* Pods_SimpleNoteTakingApp.framework */; };
 		18D677CB211849C2009EBD43 /* KIF+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D677CA211849C2009EBD43 /* KIF+Extensions.swift */; };
-		18D677D121184B26009EBD43 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D677D021184B26009EBD43 /* LoginTests.swift */; };
 		18D677D82118573E009EBD43 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D677D72118573E009EBD43 /* LoginViewController.swift */; };
 		18D677DA2118582B009EBD43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D677D92118582B009EBD43 /* Constants.swift */; };
 		18D677DC21185F96009EBD43 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D677DB21185F96009EBD43 /* UIViewController+Extensions.swift */; };
+		18D677DF21194596009EBD43 /* LoginSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D677DE21194596009EBD43 /* LoginSteps.swift */; };
 		3C893079329F590E912370C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8932CEDC05F33DAB68071E /* Main.storyboard */; };
 		3C89308E6E51F36D46413DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8934EEDB93AAC85C1C07A7 /* AppDelegate.swift */; };
 		3C8932E073CFB210C77E500A /* SimpleNoteTakingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C89378D93A1D990F8DC0A3C /* SimpleNoteTakingAppTests.swift */; };
 		3C8939DB0454F9B035451EA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C893B2BE047D1905F3CA084 /* ViewController.swift */; };
 		3C8939E9E091D25AC6F1F7A9 /* SimpleNoteTakingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C893DB09D7AC78E3F03A4E3 /* SimpleNoteTakingAppUITests.swift */; };
+		3C893AA2D2A1C2F7FFF9D530 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C89302944CCE99890EC04F5 /* LoginTests.swift */; };
 		3C893D6C06EF9A0D4B268412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C893B13CF76F27D07556776 /* Assets.xcassets */; };
 		3C893FE51784F1907AC6583C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C893926A0B11A17881E119F /* LaunchScreen.storyboard */; };
 		4A6FD575977BA9BB059CD7DB /* Pods_SimpleNoteTakingAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0A638A83DD55B687EC7430 /* Pods_SimpleNoteTakingAppTests.framework */; };
@@ -44,11 +45,12 @@
 /* Begin PBXFileReference section */
 		18D677CA211849C2009EBD43 /* KIF+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Extensions.swift"; sourceTree = "<group>"; };
 		18D677CC21184A8B009EBD43 /* SimpleNoteTakingAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleNoteTakingAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		18D677D021184B26009EBD43 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		18D677D72118573E009EBD43 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18D677D92118582B009EBD43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18D677DB21185F96009EBD43 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		18D677DE21194596009EBD43 /* LoginSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSteps.swift; sourceTree = "<group>"; };
 		3C11554102AD7951C5A5F6DB /* Pods_SimpleNoteTakingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNoteTakingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C89302944CCE99890EC04F5 /* LoginTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		3C8930726CBBDA7536E5BE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		3C89321AEDE6B598D5D22754 /* SimpleNoteTakingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleNoteTakingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8934EC6D5A3100BFD26C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		18D677CF21184B0E009EBD43 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				18D677D021184B26009EBD43 /* LoginTests.swift */,
+				3C89302944CCE99890EC04F5 /* LoginTests.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -154,9 +156,18 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		18D677DD21194580009EBD43 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				18D677DE21194596009EBD43 /* LoginSteps.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
 		3C89356128786307D7E33A87 /* SimpleNoteTakingAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				18D677DD21194580009EBD43 /* Steps */,
 				18D677CF21184B0E009EBD43 /* Features */,
 				18D677C9211849A0009EBD43 /* Extensions */,
 				3C8930726CBBDA7536E5BE23 /* Info.plist */,
@@ -535,9 +546,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D677D121184B26009EBD43 /* LoginTests.swift in Sources */,
 				18D677CB211849C2009EBD43 /* KIF+Extensions.swift in Sources */,
 				3C8932E073CFB210C77E500A /* SimpleNoteTakingAppTests.swift in Sources */,
+				18D677DF21194596009EBD43 /* LoginSteps.swift in Sources */,
+				3C893AA2D2A1C2F7FFF9D530 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
