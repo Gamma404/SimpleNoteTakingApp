@@ -56,5 +56,19 @@ class LoginTests : KIFTestCase{
         tapButton(buttonName: "OK")
     }
 
+    /*
+      情境: 輸入正確的使用者名稱與密碼
+      先將使用者名稱與密碼欄位清空
+      當我填入一組使用者名稱
+      並且填入正確的密碼
+      接者點擊”登入”按鈕
+      預期將進入到首頁
+    */
+    func testCorrectUsernameAndPassword() {
+        fillInUsername()
+        fillInCorrectPassword()
+        tapButton(buttonName: "Login")
+        expectToGoToHomeScreen()
+    }
 
 }
