@@ -29,6 +29,12 @@ class LoginViewController: UIViewController {
             showErrorAlertWithMessage("Username cannot be empty")
             return
         }
+        
+        guard let password = passwordTextField.text , password.count > 0 else {
+            showErrorAlertWithMessage("Password cannot be empty")
+            return
+        }
+        
     }
     
     
