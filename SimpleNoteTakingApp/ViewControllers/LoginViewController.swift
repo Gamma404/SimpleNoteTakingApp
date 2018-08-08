@@ -24,6 +24,21 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    lazy var homeViewController : HomeViewController = {
+        let viewController = UIStoryboard.initializeViewController(HomeViewController.self)
+        return viewController
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     @IBAction func onTapLoginButton(_ sender: UIButton) {
         guard let username = usernameTextField.text , username.count > 0 else {
             showErrorAlertWithMessage("Username cannot be empty")
@@ -40,17 +55,4 @@ class LoginViewController: UIViewController {
         }
 
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

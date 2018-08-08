@@ -35,5 +35,5 @@ class HomeTests: BaseUITests {
         expectToSeeLabel("No notes")
         expectNotToSeeNoteList()
     }
-    
+
 }

@@ -93,11 +93,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-19" y="39"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="DbR-Di-Bwd">
             <objects>
-                <viewController id="8CI-Jf-ykb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home" id="8CI-Jf-ykb" customClass="HomeViewController" customModule="SimpleNoteTakingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gDT-Tv-r8l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +106,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s43-x7-7v0">
                                 <rect key="frame" x="0.0" y="706" width="414" height="30"/>
                                 <state key="normal" title="Add note"/>
+                                <connections>
+                                    <action selector="onTapAddNoteButton:" destination="8CI-Jf-ykb" eventType="touchUpInside" id="7qd-KV-IX4"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6g-Nt-yDA">
                                 <rect key="frame" x="0.0" y="64" width="414" height="642"/>
@@ -116,6 +120,10 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Note - TableView"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="Note - TableView"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="8CI-Jf-ykb" id="pcb-LS-TnZ"/>
+                                            <outlet property="delegate" destination="8CI-Jf-ykb" id="W6h-C7-Z6i"/>
+                                        </connections>
                                     </tableView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGL-So-hX5">
                                         <rect key="frame" x="172" y="311" width="69" height="21"/>
@@ -147,10 +155,52 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rve-15-IZy"/>
                     </view>
+                    <connections>
+                        <outlet property="emptyNotesLabel" destination="OGL-So-hX5" id="Yql-iH-bpd"/>
+                        <outlet property="notesTableView" destination="We3-BC-bza" id="tRc-Ew-jt4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDA-Sr-aLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="793" y="33"/>
+        </scene>
+        <!--Note View Controller-->
+        <scene sceneID="4vA-4t-bGr">
+            <objects>
+                <viewController storyboardIdentifier="NoteViewController" id="Nym-vI-GzQ" customClass="NoteViewController" customModule="SimpleNoteTakingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoK-Oy-grp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHU-oI-oyY">
+                                <rect key="frame" x="41" y="86" width="327" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Note - Title"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7TI-ae-nxS">
+                                <rect key="frame" x="41" y="124" width="327" height="253"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" label="Note - Body"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vKB-mH-Xz8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XaI-5E-AgN"/>
+                    <connections>
+                        <outlet property="bodyTextView" destination="7TI-ae-nxS" id="Wl2-f3-Yif"/>
+                        <outlet property="titleTextField" destination="qHU-oI-oyY" id="Vi0-yC-RuR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uS3-dv-xty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="32"/>
         </scene>
     </scenes>
 </document>
