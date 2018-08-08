@@ -10,6 +10,9 @@ import Foundation
 import RealmSwift
 
 extension BaseUITests{
+    func fillIn(_ accessibilityLabel: String, withText text: String) {
+        tester().clearText(fromAndThenEnterText: text, intoViewWithAccessibilityLabel: accessibilityLabel)
+    }
 
     func expectToSee(_ text: String) {
         tester().waitForView(withAccessibilityLabel: text)

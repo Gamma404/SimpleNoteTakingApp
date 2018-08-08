@@ -42,6 +42,8 @@ class NoteViewController: UIViewController {
             titleTextField.text = note?.title
             bodyTextView.text = note?.body
             navigationItem.rightBarButtonItem?.title = note != nil ? "Update" : "Create"
+            onNoteTitleTextFieldChanged(titleTextField)
+            
 
             //增加一個對textFields的監聽
             NotificationCenter.default.addObserver(self, selector:
@@ -50,8 +52,12 @@ class NoteViewController: UIViewController {
             "UITextFieldTextDidChangeNotification"),
                     object: self.titleTextField)
         }
-
     }
+    
+    @IBAction func onNoteTitleTextFieldChanged(_ sender: AnyObject) {
+        navigationItem.rightBarButtonItem?.isEnabled = titleTextField.text?.count > 0
+    }
+    
 
     //textfields有修改時，根據有沒有資料決定create的btn是否enable
     @objc func greetingTextFieldChanged(obj: Notification) {
@@ -104,7 +110,7 @@ extension NoteViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(NoteViewController.onTapCreateButton))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(NoteViewController.onTapCancelButton))
 
-        navigationItem.rightBarButtonItem?.isEnabled = false
+       // navigationItem.rightBarButtonItem?.isEnabled = false
     }
 
     fileprivate func setupBodyTextView() {
@@ -121,7 +127,7 @@ extension NoteViewController {
             note.title = titleTextField.text!
             note.body = bodyTextView.text!
             realm.add(note)
-            print("fileURL: \(realm.configuration.fileURL!)")
+            //print("fileURL: \(realm.configuration.fileURL!)")
         }
     }
 }
